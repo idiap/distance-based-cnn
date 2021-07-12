@@ -25,7 +25,7 @@ doi={10.1109/ICASSP39728.2021.9413922}}
 
 We include in this repo
 
-* Automatic Dysarthric Speech Detection using two baseline systems and our proposed distance-based CNN approach
+* Automatic Dysarthric Speech Detection using two baseline systems and our proposed distance-based CNN approach.
     * Speech representation and distance matrix computation (database preprocessing), we included both on-the-fly and offline data preprocessing. 
     * Training/testing baseline_1 CNN, baseline_2 CNN, and our proposed distance-based CNN.
 
