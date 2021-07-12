@@ -1,0 +1,59 @@
+# CNN models/training configuration
+# Copyright (c) 2021 Idiap Research Institute, http://www.idiap.ch/
+# Written by Parvaneh Janbakhshi <parvaneh.janbakhshi@idiap.ch>
+
+SelectedNetwork: CNN1d                        # type of network
+CNN1d:
+  output_size: 2                              # number of classes--> output size
+  hidden_units: [128]                         # Number of MLP layers and their hidden units between final CNN layer and the final output layer
+  kernelsize: 4                               # kernel size in all conv layers except the first conv layer
+  poolingsize: 1                              # pooling size in all conv layers
+  convchannels: [32, 16]                      # Number of conv layers and their channels ([1, outchannel1, outchannel2, ...]
+                                              # also indicates the number of convs in CNN part.
+  nonlinearity: relu                          # The non-linear activation function "leaky-relu", "relu" or without non-linearity: ""
+  dropout_prob: 0.5                           # The dropout probability before fully connected layers
+  batchnorm: False                            # If True, applies batch norm after conv layers
+
+
+CNN2d:
+  output_size: 2                              # number of classes--> output size
+  hidden_units: [128]                         # Number of MLP layers and their hidden units between final CNN layer and the final output layer
+  kernelsize: 10                              # kernel size in all conv layers (number of conv layers is dictated by number of channels below)
+  poolingsize: 2                              # pooling size in all conv layers
+  convchannels: [16, 16]                      # Number of conv layers and their channels ([1, outchannel1, outchannel2, ...]
+                                              # also indicates the number of convs in CNN part.
+  nonlinearity: relu                          # The non-linear activation function "leaky-relu", "relu" or without non-linearity: ""
+  dropout_prob: 0.5                           # The dropout probability before fully connected layers
+  batchnorm: False                            # If True, applies batch norm after conv layers
+
+
+CNNDist:
+  output_size: 2                              # number of classes--> output size
+  hidden_units: [128]                         # Number of MLP layers and their hidden units between final CNN layer and the final output layer
+  kernelsize: 10                              # kernel size in all conv layers (number of conv layers is dictated by number of channels below)
+  poolingsize: 2                              # pooling size in all conv layers (number of conv layers is dictated by number of channels below)
+  convchannels: [32, 16, 16]                  # first channel is the number of extracted feature in front-end layer to extract features.
+                                              # After that we have [1, outchannel2, outchannel3, ...] indicating the number of convs in the 2dCNN part.
+  nonlinearity: relu                          # The non-linear activation function "leaky-relu", "relu" or nothing ""
+  dropout_prob: 0.5                           # The dropout probability before fully connected layers
+  batchnorm: False                            # If True, applies batch norm after conv layers
+
+
+dataloader:
+  online: True                               # If True it computes feature-on-the-fly (online), otherwise uses saved features
+  num_workers: 4                              # torch Dataloader workers
+  batch_size: 256                             # batch size
+  sequence_length: 160                        # miliseconds (-->to frames) segmenting audio as inputs to networks (both online and offline)
+  data_path: preprocess/dummy_database/folds/  # Source data path, 'in folder preprocess/Dataset_name/folds
+  fs: 16000                                   # sampling frequency (needed for online feature extraction)
+
+                                              # Training options
+runner:
+  Max_epoch: 20                               # total steps for training updates
+  optimizer:
+    type: SGD                                 # optimizer type: ['Adam', 'SGD'].
+    lr: 5e-2                                  # Learning rate for opt.
+    minlr: 5e-3                               # minimum lr after decreasing learning rate for early stoping
+    loss: CE                                  # loss: MSE or CE (Cross Entropy)
+    momentum: 0.0                             # momentum only for SGD
+

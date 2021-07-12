@@ -1,0 +1,5 @@
+uttr_num,ID,file_path,length,label,spk_ID
+0,1,preprocess/dummy_database/features_data/spectrogram/spk2_uttr0.npy,800.0,0,spk2
+1,1,preprocess/dummy_database/features_data/spectrogram/spk2_uttr1.npy,369.0,0,spk2
+0,4,preprocess/dummy_database/features_data/spectrogram/spk5_uttr0.npy,800.0,1,spk5
+1,4,preprocess/dummy_database/features_data/spectrogram/spk5_uttr1.npy,197.0,1,spk5

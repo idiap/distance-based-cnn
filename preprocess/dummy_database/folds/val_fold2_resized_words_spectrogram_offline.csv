@@ -1,0 +1,5 @@
+Unnamed: 0,uttr_num,ID,file_path,length,label,spk_ID
+0,0,0,preprocess/dummy_database/resized_features_data_words/spectrogram/spk1-w1.npy,1,0,spk1
+1,0,0,preprocess/dummy_database/resized_features_data_words/spectrogram/spk1-w2.npy,1,0,spk1
+10,0,5,preprocess/dummy_database/resized_features_data_words/spectrogram/spk6-w1.npy,1,1,spk6
+11,0,5,preprocess/dummy_database/resized_features_data_words/spectrogram/spk6-w2.npy,1,1,spk6

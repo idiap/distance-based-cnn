@@ -1,0 +1,13 @@
+uttr_num,ID,file_path,length,label,spk_ID
+0,0,dummy_database/features_data_words/spectrogram/spk1-w1.npy,1,0,spk1
+0,0,dummy_database/features_data_words/spectrogram/spk1-w2.npy,1,0,spk1
+0,1,dummy_database/features_data_words/spectrogram/spk2-w1.npy,1,0,spk2
+0,1,dummy_database/features_data_words/spectrogram/spk2-w2.npy,1,0,spk2
+0,2,dummy_database/features_data_words/spectrogram/spk3-w1.npy,1,0,spk3
+0,2,dummy_database/features_data_words/spectrogram/spk3-w2.npy,1,0,spk3
+0,3,dummy_database/features_data_words/spectrogram/spk4-w1.npy,1,1,spk4
+0,3,dummy_database/features_data_words/spectrogram/spk4-w2.npy,1,1,spk4
+0,4,dummy_database/features_data_words/spectrogram/spk5-w1.npy,1,1,spk5
+0,4,dummy_database/features_data_words/spectrogram/spk5-w2.npy,1,1,spk5
+0,5,dummy_database/features_data_words/spectrogram/spk6-w1.npy,1,1,spk6
+0,5,dummy_database/features_data_words/spectrogram/spk6-w2.npy,1,1,spk6

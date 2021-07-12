@@ -1,0 +1,7 @@
+
+.vscode
+queue.pl
+Phonological_posteriors_extraction
+__pycache__
+train_CNN_fold_parallelize.py
+.nfs*

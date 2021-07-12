@@ -1,0 +1,20 @@
+# feature extraction configuration
+# Copyright (c) 2021 Idiap Research Institute, http://www.idiap.ch/
+# Written by Parvaneh Janbakhshi <parvaneh.janbakhshi@idiap.ch>
+
+feat_type: spectrogram          # feat_type can be: spectrogram, fbank, mfcc
+Pairwise-Distance: False        # If true computes pairwise distance matrices
+Pairwise-Reps: False            # If true consider pairs of representations
+DistMatResize: 58               # fixed temporal size for paired speech representations and distance matrices
+
+torchaudio:
+  frame_length: 10              # frame length in ms
+  frame_shift: 10               # frame shift in ms
+  preemphasis_coefficient: 0.97
+  window_type: hanning
+  # num_mel_bins: 126           # uncomment for fbank and mfcc
+  channel: 0
+
+postprocess:                    # for torchaudio features
+  delta: 0                      # length of delta window. 0 means no delta computation
+  cmvn: False                   # If True normalizes feature dimension across utterance time
