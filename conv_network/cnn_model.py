@@ -409,7 +409,8 @@ class CNNDist(nn.Module):
 
 
 if __name__ == "__main__":
-    # ------------------------------ check ----------------------------- #
+    # Cheking...
+    # ---------------------- changing path for local run------------------ #
     from pathlib import Path 
     import sys, os
     file = Path(__file__).resolve()
