@@ -82,7 +82,7 @@ python preprocess/dummy_database/preprocess_distmat.py
 For training different CNN systems for each fold (according to our paper), we provide default config file NNtrain_config.yaml under the config/ directory to set the models architectures, and set the training and data loading parameters.
 
 * training baseline_1 CNN:
-    * in NNtrain_config.yaml set SelectedNetwork: <span style="color:blue"> "CNN1d" </span>.
+    * in NNtrain_config.yaml set SelectedNetwork: "CNN1d"
     * in audio_config.yaml set Pairwise-Distance: False and Pairwise-Reps: False  
 
 * training baseline_2 CNN:
