@@ -92,7 +92,9 @@ class ClassifierTrain(nn.Module):
 
 
 if __name__ == "__main__":
-    # ------------------------------ Sanity check ----------------------------- #
+    # Check...
+    # ------------------------------ changing path for local run------------------ #
+    
     from pathlib import Path 
     import sys, os
     file = Path(__file__).resolve()
