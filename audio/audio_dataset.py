@@ -514,7 +514,7 @@ class OnlineAcousticDataset(AcousticDataset):
 
 
 def get_dataset(runner_config, file_path, feat_config):
-    """depending on the runner config, the right datasets will be return
+    """depending on the runner config, the right datasets will be returned
     this part is a bit messy, we create dynamic classes, should do it in a better and compact way
 
     Args:
