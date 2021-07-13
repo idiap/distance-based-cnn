@@ -216,8 +216,8 @@ def kl_divergence(posterior_a, posterior_b):
 def kl_divergence_pairwise(posterior_a_mat, posterior_b_mat):
     """computes pairwise Kl div from two tensors
     Args:
-        posterior_a_mat (tensor): T1 X D
-        posterior_b_mat (tensor): T2 X D
+        posterior_a_mat (tensor): [T1 X D]
+        posterior_b_mat (tensor): [T2 X D]
     Returns:
         (tensor): pairwise KL div between rows of two input tensors
     """
@@ -245,7 +245,7 @@ def Upsampling(xSize, Final_size):
     Returns:
         (tuple): a tuple containing:
             - (tensor): new indices
-            - (tensor): old indice
+            - (tensor): old indices
     """
     xInd = np.arange(Final_size - xSize)
     lower_add = xInd[: len(xInd) // 2] + 1
@@ -264,7 +264,7 @@ def Downsampling(xSize, Final_size):
     Returns:
         (tuple): a tuple containing:
             - (tensor): new indices
-            - (tensor): old indice
+            - (tensor): old indices
     """
     xInd = np.linspace(0, xSize, Final_size, endpoint=False, dtype=int)  # downsampling
     return np.arange(Final_size), xInd
@@ -347,7 +347,7 @@ class Delta(nn.Module):
         Args:
             x (tensor):  input tensor (feat_seqlen, feat_dim)  [T X D]
         Returns:
-            x (tensor): [T X D1] concatenated features input features and
+            x (tensor): [T X D1] concatenated input features and
             its deltas according to order number
         """
         feats = [x]
