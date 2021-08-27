@@ -86,7 +86,7 @@ class CNN1d(nn.Module):
         self.maxpool = nn.MaxPool2d(1, poolingsize)  # 1d pooling across time
         self.seqlen = seqlen
         self.freqlen = freqlen
-        self.all_layers_uints = self.hidden_units + [self.output_dim]
+        self.all_layers_units = self.hidden_units + [self.output_dim]
         # for one-channel spectrograms
         self.convchannels = [1] + convchannels
         self.psize = poolingsize
@@ -133,12 +133,12 @@ class CNN1d(nn.Module):
         self.lsize = tsize * self.convchannels[layers_num + 1]
 
         linear_layers = []
-        for layers_num in range(len(self.all_layers_uints)):
+        for layers_num in range(len(self.all_layers_units)):
             in_dim = (
-                self.lsize if layers_num == 0 else self.all_layers_uints[layers_num - 1]
+                self.lsize if layers_num == 0 else self.all_layers_units[layers_num - 1]
             )
-            out_dim = self.all_layers_uints[layers_num]
-            if layers_num != len(self.all_layers_uints) - 1:
+            out_dim = self.all_layers_units[layers_num]
+            if layers_num != len(self.all_layers_units) - 1:
                 linear_layers += [nn.Linear(in_dim, out_dim), self.nonlinearity]
             else:
                 linear_layers += [nn.Linear(in_dim, out_dim)]
@@ -198,7 +198,7 @@ class CNN2d(nn.Module):
         self.maxpool = nn.MaxPool2d(poolingsize)
         self.seqlen = seqlen
         self.freqlen = freqlen
-        self.all_layers_uints = self.hidden_units + [self.output_dim]
+        self.all_layers_units = self.hidden_units + [self.output_dim]
         # for one-channel spectrograms
         self.convchannels = [1] + convchannels
         self.psize = poolingsize
@@ -237,12 +237,12 @@ class CNN2d(nn.Module):
         self.lsize = tsize * fsize * self.convchannels[layers_num + 1]
 
         linear_layers = []
-        for layers_num in range(len(self.all_layers_uints)):
+        for layers_num in range(len(self.all_layers_units)):
             in_dim = (
-                self.lsize if layers_num == 0 else self.all_layers_uints[layers_num - 1]
+                self.lsize if layers_num == 0 else self.all_layers_units[layers_num - 1]
             )
-            out_dim = self.all_layers_uints[layers_num]
-            if layers_num != len(self.all_layers_uints) - 1:
+            out_dim = self.all_layers_units[layers_num]
+            if layers_num != len(self.all_layers_units) - 1:
                 linear_layers += [nn.Linear(in_dim, out_dim), self.nonlinearity]
             else:
                 linear_layers += [nn.Linear(in_dim, out_dim)]
@@ -305,7 +305,7 @@ class CNNDist(nn.Module):
         self.maxpool = nn.MaxPool2d(poolingsize)
         self.seqlen = seqlen
         self.freqlen = freqlen
-        self.all_layers_uints = self.hidden_units + [self.output_dim]
+        self.all_layers_units = self.hidden_units + [self.output_dim]
         # for one-channel spectrograms
         self.convchannels = [1] + convchannels
         self.psize = poolingsize
@@ -354,12 +354,12 @@ class CNNDist(nn.Module):
         self.lsize = tsize * fsize * self.convchannels[layers_num + 1]
 
         linear_layers = []
-        for layers_num in range(len(self.all_layers_uints)):
+        for layers_num in range(len(self.all_layers_units)):
             in_dim = (
-                self.lsize if layers_num == 0 else self.all_layers_uints[layers_num - 1]
+                self.lsize if layers_num == 0 else self.all_layers_units[layers_num - 1]
             )
-            out_dim = self.all_layers_uints[layers_num]
-            if layers_num != len(self.all_layers_uints) - 1:
+            out_dim = self.all_layers_units[layers_num]
+            if layers_num != len(self.all_layers_units) - 1:
                 linear_layers += [nn.Linear(in_dim, out_dim), self.nonlinearity]
             else:
                 linear_layers += [nn.Linear(in_dim, out_dim)]
