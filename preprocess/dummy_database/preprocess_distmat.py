@@ -334,7 +334,7 @@ def folds_making(
         )
         table_feat_dist[table_feat_dist.ID.isin(list(map(str, val_fold_index)))][
             table_feat_dist.ref_ID.isin(
-                list(map(str, val_fold_index[val_fold_label == 0]))
+                list(map(str,train_fold_index[train_fold_label == 0]))
             )
         ].to_csv(
             os.path.join(
@@ -356,7 +356,7 @@ def folds_making(
         )
         table_feat_dist[table_feat_dist.ID.isin(list(map(str, test_fold_index)))][
             table_feat_dist.ref_ID.isin(
-                list(map(str, test_fold_index[test_fold_label == 0]))
+                list(map(str, train_fold_index[train_fold_label == 0]))
             )
         ].to_csv(
             os.path.join(
