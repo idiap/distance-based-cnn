@@ -1,5 +1,5 @@
 Unnamed: 0,uttr_num,ID,file_path,length,label,spk_ID
-0,0,0,preprocess/dummy_database/audio_data_words/spk1-w1.wav,1,0,spk1
-1,1,0,preprocess/dummy_database/audio_data_words/spk1-w2.wav,1,0,spk1
+4,4,2,preprocess/dummy_database/audio_data_words/spk3-w1.wav,1,0,spk3
+5,5,2,preprocess/dummy_database/audio_data_words/spk3-w2.wav,1,0,spk3
 10,10,5,preprocess/dummy_database/audio_data_words/spk6-w1.wav,1,1,spk6
 11,11,5,preprocess/dummy_database/audio_data_words/spk6-w2.wav,1,1,spk6

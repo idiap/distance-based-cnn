@@ -1,3 +1,3 @@
 Unnamed: 0,uttr_num,ID,ref_ID,file_path,length,label,test_spk_ID,ref_spk_ID
-0,0,0,0,preprocess/dummy_database/features_data_words_Dist/spectrogram/spk1_spk1.npy,2,0,spk1,spk1
+6,0,2,0,preprocess/dummy_database/features_data_words_Dist/spectrogram/spk3_spk1.npy,2,0,spk3,spk1
 15,0,5,0,preprocess/dummy_database/features_data_words_Dist/spectrogram/spk6_spk1.npy,2,1,spk6,spk1
